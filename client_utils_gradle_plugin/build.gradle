@@ -1,0 +1,57 @@
+plugins {
+    id 'groovy' // Groovy Language
+    id 'java-library'
+    id "com.gradle.plugin-publish" version "1.0.0-rc-2"
+    id 'maven-publish'
+//    id 'hydralab.client-util'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+    google()
+}
+
+ext {
+    //Main configuration values
+    gradlePluginVersion = '3.5.4'
+
+    // Network dependencies
+    okHttpVersion = "4.8.0"
+
+    networkDependencies = [
+            okHttp: "com.squareup.okhttp3:okhttp:${okHttpVersion}"
+    ]
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation "com.android.tools.build:gradle:${gradlePluginVersion}"
+    implementation "com.google.code.gson:gson:2.8.5"
+    implementation 'org.ow2.asm:asm:7.0'
+    implementation 'org.ow2.asm:asm-util:7.0'
+    implementation networkDependencies.okHttp
+}
+
+pluginBundle {
+    website = 'https://github.com/ysb33r/gradleTest'
+    vcsUrl = 'https://github.com/ysb33r/gradleTest.git'
+    tags = ['testing', 'integrationTesting', 'compatibility']
+}
+
+//uploadArchives {
+//    repositories {
+////        mavenDeployer {
+////            repository(url: uri('../localMavenRepository/repo'))
+////            pom.groupId = 'com.microsoft.hydralab'
+////            pom.artifactId = 'test-client-gradle-plugin'
+////            pom.version = '1.0.0'
+////        }
+//        mavenDeployer {
+//            repository(url: uri('../localMavenRepository/repo'))
+//            pom.groupId = 'com.microsoft.hydralab'
+//            pom.artifactId = 'test-client-gradle-plugin'
+//            pom.version = '1.0.0'
+//        }
+//    }
+//}

@@ -1,0 +1,12 @@
+.idea
+*.iml
+.gradle
+.env
+
+build
+target
+out
+gen
+log
+storage
+access_log
