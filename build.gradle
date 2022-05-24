@@ -6,14 +6,10 @@ buildscript {
         maven {
             url "https://plugins.gradle.org/m2/"
         }
-//        google()
-//        maven {
-//            // local repo
-//            url uri('./localMavenRepository/repo')
-//        }
+        google()
     }
     dependencies {
-//        classpath 'com.microsoft.hydralab:test-client-gradle-plugin:1.0.0'
+        classpath 'com.microsoft.hydralab:client_utils_gradle_plugin:1.0.0'
     }
 }
 
