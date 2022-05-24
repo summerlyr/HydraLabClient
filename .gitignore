@@ -10,3 +10,5 @@ gen
 log
 storage
 access_log
+
+localRepo
