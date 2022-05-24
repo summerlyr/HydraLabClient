@@ -1,6 +1,7 @@
 plugins {
     id 'groovy' // Groovy Language
     id 'java-library'
+    id 'java-gradle-plugin'
     id "com.gradle.plugin-publish" version "1.0.0-rc-2"
     id 'maven-publish'
 //    id 'hydralab.client-util'
@@ -33,25 +34,32 @@ dependencies {
     implementation networkDependencies.okHttp
 }
 
-pluginBundle {
-    website = 'https://github.com/ysb33r/gradleTest'
-    vcsUrl = 'https://github.com/ysb33r/gradleTest.git'
-    tags = ['testing', 'integrationTesting', 'compatibility']
+version = '1.0.0'
+group = 'com.microsoft.hydralab'
+
+gradlePlugin {
+    plugins {
+        clientUtilsPlugin {
+            id = 'com.microsoft.hydralab.client-util'
+            implementationClass = 'com.microsoft.hydralab.ClientUtilsPlugin'
+            displayName = 'Hydra Lab Client Plugin'
+            description = 'This is the Client Util for Hydra Lab'
+        }
+    }
 }
 
-//uploadArchives {
-//    repositories {
-////        mavenDeployer {
-////            repository(url: uri('../localMavenRepository/repo'))
-////            pom.groupId = 'com.microsoft.hydralab'
-////            pom.artifactId = 'test-client-gradle-plugin'
-////            pom.version = '1.0.0'
-////        }
-//        mavenDeployer {
-//            repository(url: uri('../localMavenRepository/repo'))
-//            pom.groupId = 'com.microsoft.hydralab'
-//            pom.artifactId = 'test-client-gradle-plugin'
-//            pom.version = '1.0.0'
+//publishing {
+//    publications {
+//        maven(MavenPublication) {
+//            groupId 'org.gradle.sample'
+//            artifactId 'project1-sample'
+//            version '1.1'
 //        }
 //    }
 //}
+
+pluginBundle {
+    website = 'https://github.com/olivershen-wow/HydraLabClient'
+    vcsUrl = 'https://github.com/olivershen-wow/HydraLabClient.git'
+    tags = ['Microsoft']
+}
