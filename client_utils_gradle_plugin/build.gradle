@@ -2,8 +2,8 @@ plugins {
     id 'groovy' // Groovy Language
     id 'java-library'
     id 'java-gradle-plugin'
-    id "com.gradle.plugin-publish" version "1.0.0-rc-2"
     id 'maven-publish'
+    id "com.gradle.plugin-publish" version "1.0.0-rc-2"
 }
 
 repositories {
@@ -33,8 +33,11 @@ dependencies {
     implementation networkDependencies.okHttp
 }
 
+// plugin publishing related
 version = '1.0.0'
 group = 'com.microsoft.hydralab'
+// alter group to this when publish to local, in order to distinguish local version and gradle plugin portal version
+//group = 'com.microsoft.hydralab.local'
 
 gradlePlugin {
     plugins {
@@ -43,15 +46,6 @@ gradlePlugin {
             implementationClass = 'com.microsoft.hydralab.ClientUtilsPlugin'
             displayName = 'Hydra Lab Client Plugin'
             description = 'This is the Client Util for Hydra Lab'
-        }
-    }
-}
-
-publishing {
-    repositories{
-        maven{
-            // local
-            url = '../localRepo'
         }
     }
 }

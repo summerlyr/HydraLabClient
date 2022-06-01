@@ -1,0 +1,14 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        mavenLocal()
+        google()
+    }
+    dependencies {
+        classpath 'com.microsoft.hydralab.local:client_utils_gradle_plugin:1.0.0'
+    }
+}
+
+apply plugin: "com.microsoft.hydralab.client-util"

@@ -45,6 +45,8 @@ class ClientUtilsPlugin implements Plugin<Project> {
                     }
                 }
 
+                println("Param appApkPath: ${project.appApkPath}")
+                println("Param testApkPath: ${project.testApkPath}")
                 if (!project.file(project.appApkPath).exists()) {
                     throw "${project.appApkPath} file not exist!"
                 }

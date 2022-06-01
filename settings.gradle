@@ -1,3 +1,4 @@
 rootProject.name = 'HydraLabClient'
 include 'client_utils_gradle_plugin'
-
+include 'sample'
+include 'local_debug'
