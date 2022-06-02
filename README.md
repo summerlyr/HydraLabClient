@@ -3,6 +3,7 @@ This repo is the Gradle plugin of [Hydra Lab](https://hydradevicenetwork.azurewe
 In order to simplify the onboarding procedure to Hydra Lab for any app, this project packaged the client util and made it an easy way for any app to leverage the cloud testing service of Hydra Lab.
 
 ## Prerequisite
+### TODO
 
 ## Usage
 To trigger gradle task for Hydra Lab testing, simply follow below steps:
