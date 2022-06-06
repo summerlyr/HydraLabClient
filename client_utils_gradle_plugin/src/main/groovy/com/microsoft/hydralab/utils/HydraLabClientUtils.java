@@ -8,7 +8,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import okhttp3.*;
 import org.apache.commons.io.IOUtils;
-import org.apache.groovy.parser.antlr4.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.*;

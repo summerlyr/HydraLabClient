@@ -6,7 +6,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.microsoft.hydralab:client_utils_gradle_plugin:1.0.0'
+        classpath 'com.microsoft.hydralab:client_utils_gradle_plugin:1.0.2'
     }
 }
 
