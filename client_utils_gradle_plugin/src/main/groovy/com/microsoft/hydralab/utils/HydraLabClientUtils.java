@@ -80,6 +80,7 @@ public class HydraLabClientUtils {
                 buildFlavor, testSuiteName, deviceIdentifier, reportAudience, timeoutSec, reportFolderPath);
         // Collect git info
         File commandDir = new File(".");
+        // TODO: make the commit info fetch approach compatible to other types of pipeline variables.
         String commitId = System.getenv("BUILD_SOURCEVERSION");
         String commitCount = "";
         String commitMsg = System.getenv("BUILD_SOURCEVERSIONMESSAGE");
