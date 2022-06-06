@@ -8,6 +8,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import okhttp3.*;
 import org.apache.commons.io.IOUtils;
+import org.apache.groovy.parser.antlr4.util.StringUtils;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
@@ -79,15 +80,30 @@ public class HydraLabClientUtils {
                 buildFlavor, testSuiteName, deviceIdentifier, reportAudience, timeoutSec, reportFolderPath);
         // Collect git info
         File commandDir = new File(".");
-        String commitId = "";
+        String commitId = System.getenv("BUILD_SOURCEVERSION");
         String commitCount = "";
-        String commitMsg = "";
+        String commitMsg = System.getenv("BUILD_SOURCEVERSIONMESSAGE");
         try {
-            commitId = getLatestCommitHash(commandDir);
+            if (StringUtils.isEmpty(commitId)){
+                commitId = getLatestCommitHash(commandDir);
+            }
             printlnf("Commit ID: %s", commitId);
-            commitCount = getCommitCount(commandDir, commitId);
+
+            if (!StringUtils.isEmpty(commitId)){
+                if (StringUtils.isEmpty(commitCount)){
+                    commitCount = getCommitCount(commandDir, commitId);
+                }
+                if (StringUtils.isEmpty(commitMsg)){
+                    commitMsg = getCommitMessage(commandDir, commitId);
+                }
+            }
+            if (StringUtils.isEmpty(commitCount)){
+                commitCount = "-1";
+            }
+            if (StringUtils.isEmpty(commitMsg)){
+                commitMsg = "NOT PARSED";
+            }
             printlnf("Commit Count: %s", commitCount);
-            commitMsg = getCommitMessage(commandDir, commitId);
             printlnf("Commit Message: %s", commitMsg);
         } catch (Exception e) {
             throw new IllegalArgumentException("Get commit info failed: " + e.getMessage(), e);
