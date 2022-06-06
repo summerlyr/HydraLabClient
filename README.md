@@ -7,7 +7,7 @@ In order to simplify the onboarding procedure to Hydra Lab for any app, this pro
 
 ## Usage
 To trigger gradle task for Hydra Lab testing, simply follow below steps:
-- Step 1: go to [template](https://github.com/olivershen-wow/HydraLabClient/tree/main/template) page, copy the following file to your repo and modify the content:
+- Step 1: go to [template](https://github.com/olivershen-wow/HydraLabClient/tree/main/template) page, copy the following files to your repo and modify the content:
   - [build.gradle](https://github.com/olivershen-wow/HydraLabClient/blob/main/template/build.gradle)
     - To introduce dependency on this plugin, please copy all content to repository/module you would like to use the plugin in.
   - [gradle.properties](https://github.com/olivershen-wow/HydraLabClient/blob/main/template/gradle.properties)
