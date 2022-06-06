@@ -116,6 +116,7 @@ public class HydraLabClientUtils {
             File file = new File(apkPath);
             assertTrue(file.exists(), "apk not exist", null);
 
+            // TODO: Known issue: cannot find file when using directory
             if (file.isDirectory()) {
                 apk = file.listFiles()[0];
             } else {

@@ -77,7 +77,7 @@ class ClientUtilsPlugin implements Plugin<Project> {
                 if (project.hasProperty('extraArgs')) {
                     extraArgsMap = [:]
                     // quotation marks not support
-                    def argLines = extraArgs.replace("\"", "").split(",")
+                    def argLines = project.extraArgs.replace("\"", "").split(",")
                     for (i in 0..<argLines.size()) {
                         String[] kv = argLines[i].split("=")
                         // use | to represent comma to avoid conflicts

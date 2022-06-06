@@ -17,3 +17,7 @@ To trigger gradle task for Hydra Lab testing, simply follow below steps:
   - Use gradle command to trigger the task.
   - Override any value in gradle.properties by specify command param "-PXXX=xxx".
   - Example command: **gradle triggerDeviceLabTest -PappApkPath="D:\Test Folder\app.apk"**
+
+## Known issue
+- Cannot find file when using directory as appApkPath and testApkPath.
+- Hard-coded with Azure DevOps embedded variable names, currently may not be compatible to other CI tools when fetching commit related information.
