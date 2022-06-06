@@ -8,9 +8,9 @@ In order to simplify the onboarding procedure to Hydra Lab for any app, this pro
 ## Usage
 To trigger gradle task for Hydra Lab testing, simply follow below steps:
 - Step 1: go to [template](https://github.com/olivershen-wow/HydraLabClient/tree/main/template) page, apply the plugin by copying and modifying the file content:
-  - build.gradle
+  - [build.gradle](https://github.com/olivershen-wow/HydraLabClient/blob/main/template/build.gradle)
     - To introduce dependency on this plugin, please copy all content to repository/module you would like to use the plugin in.
-  - gradle.properties
+  - [gradle.properties](https://github.com/olivershen-wow/HydraLabClient/blob/main/template/gradle.properties)
     - According to the comment inline and the running type you choose for your test, you should keep all required parameters and fill in them with correct values.
 - Step 2: Build your project/module to enable plugin and task
 - Step 3: Run gradle task triggerDeviceLabTest
